@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>게시판</title>
+</head>
+<body>
+  <h1>게시판</h1>
+  
+  <ul>
+    {% for post in posts %}
+      <li><a href="{% url 'board:post_detail' post.id %}">{{ post.title }}</a></li>
+    {% empty %}
+      <li>No posts yet.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'board:post_create' %}">게시물 작성</a>
+</body>
+</html>

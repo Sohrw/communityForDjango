@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>게시물 삭제</title>
+</head>
+<body>
+  <h1>게시물 삭제</h1>
+  <p>정말로 이 게시물을 삭제하시겠습니까?</p>
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit">삭제</button>
+  </form>
+  <a href="{% url 'board:post_list' %}">게시판으로 돌아가기</a>
+</body>
+</html>
